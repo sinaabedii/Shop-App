@@ -2,8 +2,16 @@ import { RotatingLines } from "react-loader-spinner";
 
 function Loader() {
   return (
-    <div className="items-center mx-auto text-center">
-      <RotatingLines strokeColor="black"  />
+    <div
+      className="mx-auto justify-center items-center text-center "
+      style={{ width: "100%", marginTop: "100px", height: "1000px" }}
+    >
+      <RotatingLines
+        width="100px"
+        height="100px"
+        strokeWidth="3"
+        strokeColor="gray"
+      />
     </div>
   );
 }
