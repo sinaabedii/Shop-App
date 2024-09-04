@@ -33,8 +33,8 @@ function ProductsPage() {
 
   return (
     <>
-      <div className="grid w-full px-2">
-        <div className="xl:flex lg:flex md:grid sm:grid xl:gap-0 lg:gap-0 md:gap-5 sm:gap-5 items-center mb-8 mt-4 px-3 justify-between">
+      <div className="grid w-full px-1">
+        <div className="xl:flex lg:flex md:grid sm:grid xl:gap-0 lg:gap-0 md:gap-5 sm:gap-5 items-center border-b-2 pb-5 mb-2 mt-4 px-3 justify-between">
           <SideBar query={query} setQuery={setQuery} />
           <SearchBox
             search={search}

@@ -16,10 +16,10 @@ function Card({ data }) {
   const quantity = productQuantity(state, id);
 
   return (
-    <div className="p-3 shadow-lg rounded-2xl  cursor-pointer ">
+    <div className="p-3 shadow-lg rounded-2xl mt-5  cursor-pointer ">
       <Link to={`/products/${id}`}>
         <img
-          className="w-60 h-60 justify-center items-center mx-auto rounded-xl"
+          className="w-52 h-52 justify-center items-center mx-auto rounded-xl"
           src={image}
           alt={title}
         />

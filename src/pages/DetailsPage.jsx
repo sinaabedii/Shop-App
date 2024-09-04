@@ -16,7 +16,7 @@ function DetailsPage() {
     <div className="xl:flex gl:flex md:grid sm:grid items-start">
       <div className="border-2 border-dashed border-slate-300 m-3 p-6 rounded-3xl">
         <img
-          className="w-96 h-80 p-4  rounded-3xl m-3 "
+          className="w-52 h-52 p-4 justify-center items-center mx-auto rounded-3xl m-3 "
           src={productDetails.image}
           alt={productDetails.title}
         />
