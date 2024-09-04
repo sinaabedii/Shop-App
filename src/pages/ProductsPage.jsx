@@ -2,9 +2,7 @@ import Card from "../components/Card";
 import Loader from "../components/Loader";
 import { useProducts } from "../context/ProductsContext";
 import { useEffect, useState } from "react";
-import { FaListUl } from "react-icons/fa";
 import {
-  createQueryObject,
   filterProducts,
   getInitialQuery,
   searchProducts,
@@ -35,15 +33,23 @@ function ProductsPage() {
 
   return (
     <>
-      <SearchBox search={search} setSearch={setSearch} setQuery={setQuery} />
-      <div>
-        <div>
-          {!displayed.length && <Loader />}
-          {displayed.map((p) => (
-            <Card key={p.id} data={p} />
-          ))}
+      <div className="grid w-full px-2">
+        <div className="xl:flex lg:flex md:grid sm:grid xl:gap-0 lg:gap-0 md:gap-5 sm:gap-5 items-center mb-8 mt-4 px-3 justify-between">
+          <SideBar query={query} setQuery={setQuery} />
+          <SearchBox
+            search={search}
+            setSearch={setSearch}
+            setQuery={setQuery}
+          />
         </div>
-        <SideBar query={query} setQuery={setQuery} />
+        <div>
+          <div className="xl:grid xl:grid-cols-4 xl:gap-10 lg:gap-10 md:gap-10 sm:gap-10 justify-between lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 sm:grid sm:grid-cols-1  ">
+            {!displayed.length && <Loader />}
+            {displayed.map((p) => (
+              <Card key={p.id} data={p} />
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );

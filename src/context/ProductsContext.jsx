@@ -19,9 +19,9 @@ function ProductsContext({ children }) {
     fetchProducts();
   }, []);
   return (
-      <ProductContext.Provider value={products}>
-        {children}
-      </ProductContext.Provider>
+    <ProductContext.Provider value={products}>
+      {children}
+    </ProductContext.Provider>
   );
 }
 
@@ -29,6 +29,11 @@ const useProducts = () => {
   const products = useContext(ProductContext);
   return products;
 };
+const useProductDetails = (id) => {
+  const products = useContext(ProductContext);
+  const result = products.find((product) => product.id === id);
+  return result;
+};
 
 export default ProductsContext;
-export { useProducts };
+export { useProducts, useProductDetails };
