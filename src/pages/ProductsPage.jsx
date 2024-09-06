@@ -1,5 +1,7 @@
+import { useSearchParams } from "react-router-dom";
 import Card from "../components/Card";
 import Loader from "../components/Loader";
+import SideList from "../components/SideList";
 import { useProducts } from "../context/ProductsContext";
 import { useEffect, useState } from "react";
 import {
@@ -7,7 +9,6 @@ import {
   getInitialQuery,
   searchProducts,
 } from "../helper/helper";
-import { useSearchParams } from "react-router-dom";
 import SearchBox from "../components/SearchBox";
 import SideBar from "../components/SideBar";
 
@@ -17,6 +18,16 @@ function ProductsPage() {
   const [displayed, setDisplayed] = useState([]);
   const [query, setQuery] = useState({});
   const [serachParams, setSearchParams] = useSearchParams();
+  const [liked, setLiked] = useState([]);
+
+  const handleLikedList = (query, status) => {
+    if (status) {
+      const newLikedList = liked.filter((i) => i.id != query.id);
+      setLiked(newLikedList);
+    } else {
+      setLiked((liked) => [...liked, query]);
+    }
+  };
 
   useEffect(() => {
     setQuery(getInitialQuery(serachParams));
@@ -46,9 +57,17 @@ function ProductsPage() {
           <div className="xl:grid xl:grid-cols-4 xl:gap-10 lg:gap-10 md:gap-10 sm:gap-10 justify-between lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 sm:grid sm:grid-cols-1  ">
             {!displayed.length && <Loader />}
             {displayed.map((p) => (
-              <Card key={p.id} data={p} />
+              <Card key={p.id} data={p} handleLikedList={handleLikedList} />
             ))}
           </div>
+          {!!liked.length && (
+            <div>
+              <h4>Favorites</h4>
+              {liked.map((query) => (
+                <SideList key={query.id} data={query} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </>

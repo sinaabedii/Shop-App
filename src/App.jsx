@@ -9,6 +9,7 @@ import ProductsProvider from "./context/ProductsContext";
 import CartProvider from "./context/CartContext";
 import LoginPage from "./pages/LoginPage";
 import AboutUsPage from "./pages/AboutUsPage";
+import SideList from "./components/SideList";
 
 function App() {
   return (

@@ -3,7 +3,6 @@ import { FaListUl } from "react-icons/fa";
 import { createQueryObject } from "../helper/helper";
 import { categories } from "../constants/listCategory";
 
-
 function SideBar({ setQuery, query }) {
   const categoryHandler = (event) => {
     const { tagName } = event.target;
@@ -17,7 +16,10 @@ function SideBar({ setQuery, query }) {
         <FaListUl />
         <p className="font-bold text-xl text-zinc-900">Categories</p>
       </div>
-      <ul className="xl:flex lg:flex md:grid sm:grid gap-3 mt-1" onClick={categoryHandler}>
+      <ul
+        className="xl:flex lg:flex md:grid sm:grid gap-3 mt-1"
+        onClick={categoryHandler}
+      >
         {categories.map((item) => (
           <li
             key={item.id}

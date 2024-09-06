@@ -5,11 +5,18 @@ import { TbListDetails, TbShoppingBagCheck } from "react-icons/tb";
 
 import { productQuantity, shortenText } from "../helper/helper";
 import { useCart } from "../context/CartContext";
+import { AiFillHeart } from "react-icons/ai";
+import { useState } from "react";
 
-function Card({ data }) {
+function Card({ data, handleLikedList }) {
   const { id, title, image, price, rating } = data;
   const [state, dispatch] = useCart();
+  const [like, setLike] = useState(false);
 
+  const likeHandler = () => {
+    handleLikedList(data, like);
+    setLike((like) => !like);
+  };
   const clickHandler = (type) => {
     dispatch({ type, payload: data });
   };
@@ -17,6 +24,9 @@ function Card({ data }) {
 
   return (
     <div className="p-3 shadow-lg rounded-2xl mt-5  cursor-pointer ">
+        <button className="float-right" onClick={likeHandler}>
+          <AiFillHeart color={like ? "red" : "#e0e0e0"} fontSize="1.8rem" />
+        </button>
       <Link to={`/products/${id}`}>
         <img
           className="w-52 h-52 justify-center items-center mx-auto rounded-xl"

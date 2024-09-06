@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-
 import { useCart } from "../context/CartContext";
 
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
@@ -12,7 +11,7 @@ function Layout({ children }) {
   return (
     <>
       <div className="xl:max-w-7xl lg:max-w-7xl md:w-screen sm:w-screen mx-auto p-2">
-        <header className="w-full flex mx-auto items-center justify-between top-0 shadow-2xl sticky bg-zinc-700 text-white px-5 py-3 m-4 rounded-t-xl  ">
+        <header className="w-full flex mx-auto items-center justify-between top-0 shadow-2xl  bg-zinc-700 text-white px-5 py-3 rounded-t-xl  ">
           <Link to="/products" className="font-bold text-2xl ">
             Shop App
           </Link>
@@ -40,20 +39,20 @@ function Layout({ children }) {
             >
               <div>
                 <MenuItem>
-                  <button className=" w-full px-4 py-2 text-left text-md text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 rounded-b-md">
-                    <Link to="/login" className="flex items-center gap-2">
+                  <Link to="/login" className="flex items-center gap-2">
+                    <button className="flex items-center gap-2 w-full px-4 py-2 text-left text-md text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 rounded-b-md">
                       <MdOutlineLogin />
                       Login
-                    </Link>
-                  </button>
+                    </button>
+                  </Link>
                 </MenuItem>
                 <MenuItem>
-                  <button className="flex items-center gap-2 w-full px-4 py-2 text-left text-md text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 rounded-b-md">
-                    <Link to="/about-us" className="flex items-center gap-2">
+                  <Link to="/about-us" className="flex items-center gap-2">
+                    <button className="flex items-center gap-2 w-full px-4 py-2 text-left text-md text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 rounded-b-md">
                       <MdSupportAgent />
                       Contact Us
-                    </Link>
-                  </button>
+                    </button>
+                  </Link>
                 </MenuItem>
               </div>
             </MenuItems>
