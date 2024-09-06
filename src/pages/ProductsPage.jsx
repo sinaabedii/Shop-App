@@ -44,8 +44,8 @@ function ProductsPage() {
 
   return (
     <>
-      <div className="grid w-full px-1">
-        <div className="xl:flex lg:flex md:grid sm:grid xl:gap-0 lg:gap-0 md:gap-5 sm:gap-5 items-center border-b-2 pb-5 mb-2 mt-4 px-3 justify-between">
+      <div className="grid w-full px-1.5">
+        <div className="xl:flex lg:flex md:grid sm:grid xl:gap-0 lg:gap-0 md:gap-5 sm:gap-5 items-center border-b-2 pb-5 mb-2 mt-1 justify-between">
           <SearchBox
             search={search}
             setSearch={setSearch}
