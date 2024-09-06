@@ -1,5 +1,5 @@
 import { BsPatchCheck } from "react-icons/bs";
-import { RiHashtag } from "react-icons/ri";
+import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import { TbChecklist } from "react-icons/tb";
 
 function BasketSidebar({ state, clickHandler }) {
@@ -11,14 +11,16 @@ function BasketSidebar({ state, clickHandler }) {
         <span className="ml-3 text-zinc-600">{state.total} $</span>
       </div>
       <div className="flex items-center mb-4">
-        <RiHashtag className="text-xl mr-2" />
+        <MdOutlineProductionQuantityLimits className="text-xl mr-2" />
         <p className="text-lg text-zinc-800 font-semibold">Quantity:</p>
         <span className="ml-3 text-zinc-600">{state.itemsCounter}</span>
       </div>
-      <div className="flex items-center mb-4 ml-1">
-        <BsPatchCheck className="text-xl mr-2 w-4"/>
+      <div className="flex items-center mb-4 ml-0.5">
+        <BsPatchCheck className="text-xl mr-2 w-5" />
         <p className="text-lg text-zinc-800 font-semibold">Status:</p>
-        <span className="ml-3 text-zinc-600">{!state.checkout && "Pending..."}</span>
+        <span className="ml-3 text-zinc-600">
+          {!state.checkout && "Pending..."}
+        </span>
       </div>
       <button
         className="w-2/3 mx-14 mt-3 bg-yellow-500 text-zinc-800 font-semibold border-none p-1 rounded-xl cursor-pointer "
