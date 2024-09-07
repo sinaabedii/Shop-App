@@ -11,13 +11,13 @@ function Layout({ children }) {
   return (
     <>
       <div className="xl:max-w-7xl lg:max-w-7xl md:w-screen sm:w-screen mx-auto ">
-        <header className="w-full z-10 flex sticky mx-auto items-center justify-between top-0 shadow-2xl  bg-zinc-700 text-white px-5 py-3   ">
+        <header className="w-full z-10 border-inherit flex backdrop-blur-xl sticky mx-auto items-center justify-between top-0 shadow-2xl  text-zinc-800 px-5 py-3   ">
           <Link to="/products" className="font-bold text-2xl ">
             Shop App
           </Link>
           <div className="flex gap-1 -mr-36">
             <Link to="/checkout">
-              <div className="text-2xl w-9 h-9 text-center text-white rounded-lg p-1 relative">
+              <div className="text-2xl w-9 h-9 text-center text-zinc-800 rounded-lg p-1 relative">
                 <PiShoppingCartSimpleBold />
                 {!!state.itemsCounter && (
                   <span className="text-sm w-5 h-5 bg-white border font-bold text-black rounded-full absolute -top-2 -right-1">
@@ -29,7 +29,7 @@ function Layout({ children }) {
           </div>
           <Menu as="div" className="relative inline-block text-left">
             <div>
-              <MenuButton className="inline-flex w-8 justify-center gap-x-1.5 rounded-md bg-zinc-200 px-0 py-1  text-xl font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+              <MenuButton className="inline-flex w-8 justify-center rounded-md bg-zinc-100 py-1 text-xl font-semibold text-gray-900 hover:bg-zinc-200">
                 <IoMdMore />
               </MenuButton>
             </div>
@@ -39,17 +39,23 @@ function Layout({ children }) {
             >
               <div>
                 <MenuItem>
-                  <Link to="/login" className="flex items-center gap-2">
-                    <button className="flex items-center gap-2 w-full px-4 py-2 text-left text-md text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 rounded-b-md">
-                      <MdOutlineLogin />
+                  <Link
+                    to="/login"
+                    className="flex items-center gap-2 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
+                  >
+                    <button className="flex items-center gap-2 w-full px-4 py-2 text-left text-md text-gray-700  rounded-b-md">
+                      <MdOutlineLogin className="w-5 h-5" />
                       Login
                     </button>
                   </Link>
                 </MenuItem>
                 <MenuItem>
-                  <Link to="/about-us" className="flex items-center gap-2">
-                    <button className="flex items-center gap-2 w-full px-4 py-2 text-left text-md text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 rounded-b-md">
-                      <MdSupportAgent />
+                  <Link
+                    to="/about-us"
+                    className="flex items-center gap-2 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
+                  >
+                    <button className="flex items-center gap-2 w-full px-4 py-2 text-left text-md text-gray-700 rounded-b-xs">
+                      <MdSupportAgent className="w-5 h-5" />
                       Contact Us
                     </button>
                   </Link>

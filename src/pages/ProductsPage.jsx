@@ -11,6 +11,7 @@ import {
 } from "../helper/helper";
 import SearchBox from "../components/SearchBox";
 import SideBar from "../components/SideBar";
+import { MdFavorite } from "react-icons/md";
 
 function ProductsPage() {
   const products = useProducts();
@@ -53,6 +54,17 @@ function ProductsPage() {
             setQuery={setQuery}
           />
         </div>
+        {!!liked.length && (
+          <div className="items-center grid border-zinc-300 bg-zinc-200 rounded-xl px-2 shadow-md border-2 mx-1 my-2">
+            <h4 className="flex items-center gap-1 font-semibold mb-1">
+              <MdFavorite className="w-6 h-6 text-red-600" />
+              Favorites
+            </h4>
+            {liked.map((query) => (
+              <SideList key={query.id} data={query} />
+            ))}
+          </div>
+        )}
         <div>
           <div className="xl:grid xl:grid-cols-4 xl:gap-10 lg:gap-10 md:gap-10 sm:gap-10 justify-between lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 sm:grid sm:grid-cols-1  ">
             {!displayed.length && <Loader />}
@@ -60,14 +72,6 @@ function ProductsPage() {
               <Card key={p.id} data={p} handleLikedList={handleLikedList} />
             ))}
           </div>
-          {!!liked.length && (
-            <div>
-              <h4>Favorites</h4>
-              {liked.map((query) => (
-                <SideList key={query.id} data={query} />
-              ))}
-            </div>
-          )}
         </div>
       </div>
     </>
