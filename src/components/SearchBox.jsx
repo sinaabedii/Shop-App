@@ -13,20 +13,20 @@ function SearchBox({ search, setSearch, setQuery }) {
       >
         Search
       </label>
-      <div class="relative px-1">
-        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+      <div class="relative px-2">
+        <div class="absolute inset-y-0 start-0 flex items-center ps-4 pointer-events-none">
           <ImSearch class="w-4 h-4 text-zinc-500 dark:text-zinc-400" />
         </div>
         <input
           value={search}
           onChange={(e) => setSearch(e.target.value.toLowerCase())}
-          class="container py-1.5 ps-10 pe-16 text-sm text-zinc-700 border outline-none rounded-md border-zinc-200 bg-zinc-200 placeholder:text-zinc-600 "
+          class="container py-3 ps-10 pe-16 text-sm text-zinc-700 border outline-none rounded-md border-zinc-200 bg-zinc-200 placeholder:text-zinc-600 "
           placeholder="Search ..."
         />
         <button
           type="button"
           onClick={searchHandler}
-          class="text-white absolute end-2 bottom-1.5 bg-zinc-500 hover:bg-zinc-700 font-medium rounded-md text-xs px-2 py-1 "
+          class="text-white absolute end-4 bottom-2.5 bg-zinc-500 hover:bg-zinc-700 font-medium rounded-md text-xs px-2 py-1.5 "
         >
           Search
         </button>

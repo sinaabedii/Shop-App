@@ -1,4 +1,3 @@
-import { FaListUl } from "react-icons/fa";
 
 import { createQueryObject } from "../helper/helper";
 import { categories } from "../constants/listCategory";
@@ -21,8 +20,8 @@ function SideBar({ setQuery, query }) {
             key={item.id}
             className={
               item.type.toLowerCase() === query.category
-                ? "my-auto text-xs text-gray-100 py-1 rounded-md px-1 font-semibold bg-zinc-400 cursor-pointer"
-                : "py-1 cursor-pointer text-zinc-800 rounded-md px-1 bg-zinc-300 text-xs"
+                ? "my-auto text-xs text-gray-50 py-1 rounded-md px-1 font-semibold bg-zinc-400 cursor-pointer"
+                : "py-1.5 cursor-pointer text-zinc-800 rounded-md px-1 bg-zinc-300 text-xs"
             }
           >
             {item.type}
