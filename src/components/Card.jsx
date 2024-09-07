@@ -23,13 +23,13 @@ function Card({ data, handleLikedList }) {
   const quantity = productQuantity(state, id);
 
   return (
-    <div className="p-3 shadow-lg rounded-2xl mt-5  cursor-pointer ">
-        <button className="float-right" onClick={likeHandler}>
-          <AiFillHeart color={like ? "red" : "#e0e0e0"} fontSize="1.8rem" />
-        </button>
+    <div className="p-3 shadow-xl rounded-2xl mt-5  cursor-pointer ">
+      <button className="float-right" onClick={likeHandler}>
+        <AiFillHeart color={like ? "red" : "#e0e0e0"} fontSize="1.8rem" />
+      </button>
       <Link to={`/products/${id}`}>
         <img
-          className="w-52 h-52 justify-center items-center mx-auto rounded-xl"
+          className="w-52 h-52 justify-center items-center bg-transparent mx-auto rounded-xl"
           src={image}
           alt={title}
         />

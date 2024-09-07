@@ -11,9 +11,9 @@ function SideBar({ setQuery, query }) {
     if (tagName !== "LI") return;
   };
   return (
-    <div className="-mt-1">
+    <div className="sticky">
       <ul
-        className="flex overflow-auto gap-2 px-2 bg-slate-200 justify-between"
+        className="flex overflow-auto px-1 gap-1 mb-1 justify-between"
         onClick={categoryHandler}
       >
         {categories.map((item) => (
@@ -21,8 +21,8 @@ function SideBar({ setQuery, query }) {
             key={item.id}
             className={
               item.type.toLowerCase() === query.category
-                ? "my-auto text-sm text-zinc-600 cursor-pointer "
-                : "py-1.5 cursor-pointer text-sm text-zinc-400"
+                ? "my-auto text-xs text-gray-100 py-1 rounded-md px-1 font-semibold bg-zinc-400 cursor-pointer "
+                : "py-1 cursor-pointer text-zinc-800 rounded-md px-1 bg-zinc-300 text-xs "
             }
           >
             {item.type}

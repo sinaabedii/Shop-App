@@ -11,7 +11,7 @@ function Layout({ children }) {
   return (
     <>
       <div className="xl:max-w-7xl lg:max-w-7xl md:w-screen sm:w-screen mx-auto ">
-        <header className="w-full flex mx-auto items-center justify-between top-0 shadow-2xl  bg-zinc-700 text-white px-5 py-3   ">
+        <header className="w-full z-10 flex sticky mx-auto items-center justify-between top-0 shadow-2xl  bg-zinc-700 text-white px-5 py-3   ">
           <Link to="/products" className="font-bold text-2xl ">
             Shop App
           </Link>

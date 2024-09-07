@@ -44,7 +44,7 @@ function ProductsPage() {
 
   return (
     <>
-      <div className="grid">
+      <div className="grid sticky top-0">
         <div className="xl:flex lg:flex md:grid sm:grid xl:gap-0 lg:gap-0 md:gap-5 sm:gap-5 items-center  pb-5 mb-2 mt-1 justify-between">
           <SideBar query={query} setQuery={setQuery} />
           <SearchBox
