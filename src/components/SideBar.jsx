@@ -11,13 +11,9 @@ function SideBar({ setQuery, query }) {
     if (tagName !== "LI") return;
   };
   return (
-    <div className="xl:flex lg:flex md:grid sm:grid ">
-      <div className="flex gap-2 mr-10 items-center ">
-        <FaListUl />
-        <p className="font-bold text-xl text-zinc-900">Categories</p>
-      </div>
+    <div className="-mt-1">
       <ul
-        className="xl:flex lg:flex md:grid sm:grid gap-3 mt-1"
+        className="flex overflow-auto gap-2 px-2 bg-slate-200 justify-between"
         onClick={categoryHandler}
       >
         {categories.map((item) => (
@@ -25,8 +21,8 @@ function SideBar({ setQuery, query }) {
             key={item.id}
             className={
               item.type.toLowerCase() === query.category
-                ? "font-semibold p-1 border-b-gray-500 border-b-2 rounded-t-md my-auto text-zinc-600 cursor-pointer "
-                : "hover:border-b-gray-500 hover:border-b-2 p-1 cursor-pointer text-zinc-800 "
+                ? "my-auto text-sm text-zinc-600 cursor-pointer "
+                : "py-1.5 cursor-pointer text-sm text-zinc-400"
             }
           >
             {item.type}

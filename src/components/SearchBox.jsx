@@ -26,7 +26,7 @@ function SearchBox({ search, setSearch, setQuery }) {
         <button
           type="button"
           onClick={searchHandler}
-          class="text-white absolute end-2.5 bottom-2.5 bg-zinc-600 hover:bg-zinc-700 font-medium rounded-md text-sm px-3 py-1.5 "
+          class="text-white absolute end-2 bottom-2.5 bg-zinc-500 hover:bg-zinc-700 font-medium rounded-md text-sm px-3 py-1 "
         >
           Search
         </button>
