@@ -3,7 +3,7 @@ import { RotatingLines } from "react-loader-spinner";
 function Loader() {
   return (
     <div
-      className=""
+      className="flex justify-center"
       style={{ width: "100%", marginTop: "100px", height: "1000px" }}
     >
       <RotatingLines
