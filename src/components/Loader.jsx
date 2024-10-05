@@ -3,7 +3,7 @@ import { RotatingLines } from "react-loader-spinner";
 function Loader() {
   return (
     <div
-      className="mx-auto justify-center items-center text-center "
+      className="mx-auto grid justify-center items-center text-center "
       style={{ width: "100%", marginTop: "100px", height: "1000px" }}
     >
       <RotatingLines
